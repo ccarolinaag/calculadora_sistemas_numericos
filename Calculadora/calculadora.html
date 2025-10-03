@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clara's Machine</title>
+  <link rel="stylesheet" href="styleMachine.css">
+</head>
+
+<body>
+  <div class="retangulo">
+    <div class="tituloBox">
+      <h1>Calculadora de Conversão <br>
+        de Bases Numéricas</h1>
+    </div>
+
+    <div class="inputs">
+      <label>_decimal: </label>
+      <input id="ipt_decimal" oninput="converter()"><br><br>
+
+      <label>_octal: </label>
+      <input id="ipt_octal" oninput="converter()"><br><br>
+
+      <label>_hexa: </label>
+      <input id="ipt_hexa" oninput="converter()"><br><br>
+
+      <label>_binário: </label>
+      <input id="ipt_bin" oninput="converter()"><br><br>
+    </div>
+
+  </div>
+
+  <script>
+    var decimal = 0;
+    var octal = 0;
+    var hexa = 0;
+    var bin = 0;
+
+    function parse(valor, base) {
+
+    }
+
+    function converter() {
+      var new_decimal = Number(ipt_decimal.value);
+      var new_octal = Number(ipt_octal.value);
+      var new_hexa = ipt_hexa.value;
+      var new_bin = Number(ipt_bin.value);
+
+      if (new_decimal != decimal && ipt_decimal.value !== "" && !isNaN(new_decimal)) {
+        ipt_octal.value = new_decimal.toString(8);
+        ipt_hexa.value = new_decimal.toString(16).toUpperCase();
+        ipt_bin.value = new_decimal.toString(2);
+
+        decimal = new_decimal;
+        return;
+      }
+
+      if (new_octal != octal && ipt_octal.value !== "" && !isNaN(new_octal)) {
+        var dec = parseInt(ipt_octal.value, 8);
+        ipt_decimal.value = dec;
+        ipt_hexa.value = dec.toString(16).toUpperCase();
+        ipt_bin.value = dec.toString(2);
+
+        octal = new_octal;
+        return;
+      }
+
+      if (new_hexa != hexa && ipt_hexa.value !== "") {
+        var dec = parseInt(ipt_hexa.value, 16);
+        if (!isNaN(dec)) {
+          ipt_decimal.value = dec;
+          ipt_octal.value = dec.toString(8);
+          ipt_bin.value = dec.toString(2);
+
+          hexa = new_hexa;
+        }
+        return;
+      }
+
+      if (new_bin != bin && ipt_bin.value !== "" && !isNaN(new_bin)) {
+        var dec = parseInt(ipt_bin.value, 2);
+        ipt_decimal.value = dec;
+        ipt_octal.value = dec.toString(8);
+        ipt_hexa.value = dec.toString(16).toUpperCase();
+
+        bin = new_bin;
+        return;
+      }
+
+      if (
+        ipt_decimal.value === "" &&
+        ipt_octal.value === "" &&
+        ipt_hexa.value === "" &&
+        ipt_bin.value === ""
+      ) {
+        decimal = 0;
+        octal = 0;
+        hexa = 0;
+        bin = 0;
+
+        ipt_decimal.value = "";
+        ipt_octal.value = "";
+        ipt_hexa.value = "";
+        ipt_bin.value = "";
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+body {
+    background-color: #fff500;
+    font-family: 'JetBrains', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.retangulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80vh;
+    height: 70vh;
+
+    background-color: white;
+    border: 5px solid black;
+    box-shadow: 20px 20px 0 black;
+        
+    padding: 30px 50px;
+    position: relative;
+}
+
+.tituloBox {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 5px 9px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: -90px;
+    width: vh;
+}
+
+/* Títulos */
+h1 {
+    font-size: 30px;
+    font-weight: 520;
+    text-align: center;
+    text-transform: lowercase;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: left;
+    font-weight: 1000;
+    text-transform: lowercase;
+    margin-bottom: 20px;
+    color: black;
+    margin: 0px 0px 25px
+}
+
+/* Inputs + textos */
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* tudo alinhado à esquerda */
+    width: 95%;
+}
+
+.inputs label {
+    font-size: 20px;
+    font-weight: 1000;
+}
+
+.inputs input {
+    width: 100%;
+    height: 35px;
+    border: 2px solid black;
+    padding: 2px 10px;
+    font-size: 15px;
+    background-color: #f2f2f2;
+    box-shadow: 4px 4px 0 black;
+}
+
+.inputs input:focus {
+    outline: none;
+    background-color: #f9f8d2;
+}
