@@ -16,28 +16,29 @@ body {
     align-items: center;
     justify-content: flex-start;
     width: 80vh;
-    height: 70vh;
+    height: 50vh;
 
     background-color: white;
     border: 5px solid black;
     box-shadow: 20px 20px 0 black;
         
-    padding: 30px 50px;
+    padding: 50px;
     position: relative;
 }
 
 .tituloBox {
     background-color: #000000;
     color: #ffffff;
+
     padding: 5px 9px;
-    margin-bottom: 20px;
     position: absolute;
-    top: -90px;
-    width: vh;
+    top: -47px;
+    width: fit-content;
 }
 
-/* Títulos */
+
 h1 {
+    margin: 0;
     font-size: 30px;
     font-weight: 520;
     text-align: center;
@@ -54,22 +55,23 @@ h2 {
     margin: 0px 0px 25px
 }
 
-/* Inputs + textos */
-.inputs {
+
+.inputs_container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* tudo alinhado à esquerda */
-    width: 95%;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
 }
 
-.inputs label {
+.inputs_container label {
     font-size: 20px;
     font-weight: 1000;
 }
 
-.inputs input {
-    width: 100%;
+.inputs_container  input {
+    width: 95%;
     height: 35px;
     border: 2px solid black;
     padding: 2px 10px;
@@ -81,4 +83,8 @@ h2 {
 .inputs input:focus {
     outline: none;
     background-color: #f9f8d2;
+}
+
+.inputs {
+    width: 100%;
 }
